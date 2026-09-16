@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SteeringFlow — the Agent Control Plane for connecting, routing, and coordinating your Agent Network.">
+  <title>SteeringFlow — Agent Control Plane</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sf-mark" viewBox="0 0 280 280">
+    <g fill="none" stroke-linecap="round">
+      <g stroke="currentColor" stroke-width="14">
+        <line x1="140" y1="140" x2="250" y2="140"/><line x1="140" y1="140" x2="217.8" y2="217.8"/>
+        <line x1="140" y1="140" x2="140" y2="250"/><line x1="140" y1="140" x2="62.2" y2="217.8"/>
+        <line x1="140" y1="140" x2="30" y2="140"/><line x1="140" y1="140" x2="62.2" y2="62.2"/>
+        <line x1="140" y1="140" x2="217.8" y2="62.2"/>
+      </g>
+      <line x1="140" y1="140" x2="140" y2="30" stroke="var(--gold)" stroke-width="14"/>
+      <circle cx="140" cy="140" r="70" stroke="currentColor" stroke-width="12.6"/>
+      <circle cx="140" cy="140" r="26" fill="currentColor"/>
+      <circle cx="140" cy="140" r="10" fill="var(--gold)"/>
+    </g>
+  </symbol>
+</svg>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SteeringFlow home">
+      <img src="logo.svg" alt="" class="brand-mark">
+      <span class="brand-name"><span>Steering</span><strong>Flow</strong></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#product" data-i18n="nav.product">Product</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#examples" data-i18n="nav.examples">Examples</a>
+      <a href="#cloud" data-i18n="nav.cloud">Cloud</a>
+      <a href="#oss" data-i18n="nav.oss">Open Source</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">
+        <span class="lang-en">EN</span><span class="lang-sep">/</span><span class="lang-zh">中文</span>
+      </button>
+      <a class="github-link" href="https://github.com/SteeringFlow/agent-control-plane" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero.eyebrow">AGENT CONTROL PLANE</div>
+        <h1 data-i18n="hero.title">Connect<br>Route<br>Coordinate your Agents</h1>
+        <p class="hero-lede" data-i18n="hero.lede">
+          SteeringFlow is an Agent Control Plane for connecting, routing, and coordinating your Agent Network. Bring the Agents you already have — without rebuilding them.
+        </p>
+        <div class="cta-row">
+          <a class="button button-primary" href="#cloud" data-i18n="cta.cloud">Try Cloud</a>
+          <a class="button button-secondary" href="https://github.com/SteeringFlow/agent-control-plane" target="_blank" rel="noreferrer" data-i18n="cta.github">View on GitHub</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Channels connected to Agents through SteeringFlow">
+        <div class="network-stage">
+          <div class="network-caption">AGENT NETWORK</div>
+          <div class="flow-chip"><i></i> ACTIVE ROUTE</div>
+          <svg class="network-svg" viewBox="0 0 510 500" role="img" aria-label="Agent network: light flowing between surrounding Agents and the central SteeringFlow control plane">
+            <defs>
+              <radialGradient id="glowGrad">
+                <stop offset="0%" style="stop-color:var(--gold);stop-opacity:.22"/>
+                <stop offset="70%" style="stop-color:var(--gold);stop-opacity:0"/>
+              </radialGradient>
+            </defs>
+            <circle class="net-glow" cx="255" cy="250" r="180"/>
+            <path class="mesh" d="M348 90 L440 250 L348 410 L162 410 L70 250 L162 90 Z"/>
+            <g>
+              <line class="link" x1="348" y1="90" x2="255" y2="250"/>
+              <line class="link" x1="440" y1="250" x2="255" y2="250"/>
+              <line class="link" x1="348" y1="410" x2="255" y2="250"/>
+              <line class="link" x1="162" y1="410" x2="255" y2="250"/>
+              <line class="link" x1="70" y1="250" x2="255" y2="250"/>
+              <line class="link" x1="162" y1="90" x2="255" y2="250"/>
+            </g>
+            <g>
+              <g class="fdot f1"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot f2"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot f3"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot f4"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot f5"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot f6"><circle class="halo" r="4.5"/><circle class="core" r="1.8"/></g>
+              <g class="fdot fm1"><circle class="halo" r="3.5"/><circle class="core" r="1.4"/></g>
+              <g class="fdot fm2"><circle class="halo" r="3.5"/><circle class="core" r="1.4"/></g>
+            </g>
+            <circle class="orbit oa" cx="255" cy="250" r="133"/>
+            <circle class="orbit ob" cx="255" cy="250" r="205"/>
+            <g class="plane">
+              <circle class="plane-glow" cx="255" cy="250" r="100"/>
+              <circle class="plane-disc" cx="255" cy="250" r="88"/>
+              <use href="#sf-mark" x="227" y="203" width="56" height="56" style="color:var(--ink)"/>
+              <text class="plane-title" x="255" y="277" text-anchor="middle"><tspan>Steering</tspan><tspan fill="var(--gold)">Flow</tspan></text>
+              <text class="plane-sub" x="255" y="292" text-anchor="middle">CONTROL PLANE</text>
+            </g>
+            <g>
+              <g class="node"><rect x="321" y="78" width="54" height="24"/><text x="348" y="93.5">Agent</text></g>
+              <g class="node"><rect x="413" y="238" width="54" height="24"/><text x="440" y="253.5">Agent</text></g>
+              <g class="node"><rect x="321" y="398" width="54" height="24"/><text x="348" y="413.5">Agent</text></g>
+              <g class="node"><rect x="135" y="398" width="54" height="24"/><text x="162" y="413.5">Agent</text></g>
+              <g class="node"><rect x="43" y="238" width="54" height="24"/><text x="70" y="253.5">Agent</text></g>
+              <g class="node"><rect x="135" y="78" width="54" height="24"/><text x="162" y="93.5">Agent</text></g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement reveal" id="product">
+      <div class="section-kicker" data-i18n="statement.kicker">THE IDEA</div>
+      <h2 data-i18n="statement.title">Bring Your Agents.<br>Don’t Rebuild Them.</h2>
+      <p data-i18n="statement.body">
+        Your Agents already contain the intelligence and business logic. SteeringFlow provides the control layer around them: connection, routing, coordination, and observability.
+      </p>
+    </section>
+
+    <section class="steps reveal" id="how">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker" data-i18n="steps.kicker">FROM CONNECTION TO CONTROL</div>
+          <h2 data-i18n="steps.title">One control layer.<br>A growing Agent Network.</h2>
+        </div>
+        <p data-i18n="steps.body">Start with one Agent and one Channel. Add more as your network grows.</p>
+      </div>
+      <div class="step-grid">
+        <article class="step-card">
+          <span>01</span><h3 data-i18n="step1.title">Connect</h3>
+          <p data-i18n="step1.body">Connect your Channels and existing Agents through a single control plane.</p>
+        </article>
+        <article class="step-card featured">
+          <span>02</span><h3 data-i18n="step2.title">Route</h3>
+          <p data-i18n="step2.body">Route each request through the right Agent connection.</p>
+        </article>
+        <article class="step-card">
+          <span>03</span><h3 data-i18n="step3.title">Coordinate</h3>
+          <p data-i18n="step3.body">Create a foundation for coordination as your network grows.</p>
+        </article>
+        <article class="step-card featured">
+          <span>04</span><h3 data-i18n="step4.title">Control</h3>
+          <p data-i18n="step4.body">Observe interactions and create a foundation for policies and governance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="examples reveal" id="examples">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker" data-i18n="examples.kicker">START WITH WHAT YOU HAVE</div>
+          <h2 data-i18n="examples.title">Connect first.<br>Expand when you’re ready.</h2>
+        </div>
+      </div>
+      <div class="example-grid">
+        <article class="example-card">
+          <div class="example-top"><span class="tag">01</span><span>WORKBUDDY + WECOM</span></div>
+          <h3 data-i18n="example1.title">Bring an Agent to your Channel.</h3>
+          <p data-i18n="example1.body">Connect a WorkBuddy Agent to WeCom through SteeringFlow and get to a first successful interaction quickly.</p>
+        </article>
+        <article class="example-card">
+          <div class="example-top"><span class="tag">02</span><span>CUSTOM AGENT</span></div>
+          <h3 data-i18n="example2.title">Connect your own Agent runtime.</h3>
+          <p data-i18n="example2.body">Use the Agent Runtime interface to connect an Agent you already built and keep its internal state under your control.</p>
+        </article>
+        <article class="example-card">
+          <div class="example-top"><span class="tag">03</span><span>MULTI-AGENT</span></div>
+          <h3 data-i18n="example3.title">Connect additional Agents as your network grows.</h3>
+          <p data-i18n="example3.body">No changes to the Channels your users already use.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split reveal" id="cloud">
+      <div class="split-copy">
+        <div class="section-kicker" data-i18n="cloud.kicker">STEERINGFLOW CLOUD · PRIVATE BETA</div>
+        <h2 data-i18n="cloud.title">Connect your Agent.<br>Skip the infrastructure.</h2><div class="cloud-tagline" data-i18n="cloud.tagline">Start with one. Grow into a network.</div>
+        <p data-i18n="cloud.body">A hosted path for teams that want to connect Agents and Channels without running the control-plane infrastructure themselves.</p>
+        <a class="text-link" href="mailto:hello@steeringflow.com?subject=SteeringFlow%20Cloud%20Early%20Access" data-i18n="cloud.link">Request Cloud Early Access →</a>
+      </div>
+      <div class="split-side plain">
+        <div class="mini-flow">
+          <div class="mf-step"><span class="mf-num">01</span><span data-i18n="flow.step1">Sign up</span><i>↓</i></div>
+          <div class="mf-step"><span class="mf-num">02</span><span data-i18n="flow.step2">Connect Agent</span><i>↓</i></div>
+          <div class="mf-step"><span class="mf-num">03</span><span data-i18n="flow.step3">Connect Channel</span><i>↓</i></div>
+          <div class="mf-step final"><span class="mf-num">04</span><strong data-i18n="flow.step4">First Success</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split reverse reveal" id="oss">
+      <div class="split-copy">
+        <div class="section-kicker" data-i18n="oss.kicker">OPEN SOURCE</div>
+        <h2 data-i18n="oss.title">Run SteeringFlow yourself.</h2>
+        <p data-i18n="oss.body">SteeringFlow is designed to be self-hosted. Explore the code, run it locally, and build your own integrations.</p>
+        <a class="text-link" href="https://github.com/SteeringFlow/agent-control-plane" target="_blank" rel="noreferrer" data-i18n="oss.link">Explore the repository →</a>
+      </div>
+      <div class="split-side dark-panel">
+        <div class="code-line"><span>$</span> git clone https://github.com/SteeringFlow/agent-control-plane.git</div>
+        <div class="code-line"><span>$</span> docker compose up</div>
+        <div class="code-line muted">SteeringFlow is running.</div>
+      </div>
+    </section>
+
+    <section class="final-cta reveal">
+      <img src="logo.svg" alt="" class="final-mark">
+      <div class="section-kicker" data-i18n="final.kicker">YOUR AGENT NETWORK STARTS HERE</div>
+      <h2 data-i18n="final.title">Connect. Route. Coordinate.<br>Control your Agent Network.</h2>
+      <div class="cta-row">
+        <a class="button button-primary" href="#cloud" data-i18n="cta.cloud">Try Cloud</a>
+        <a class="button button-secondary" href="https://github.com/SteeringFlow/agent-control-plane" target="_blank" rel="noreferrer" data-i18n="cta.github">View on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand">
+      <img src="logo.svg" alt="" class="brand-mark">
+      <span class="brand-name"><span>Steering</span><strong>Flow</strong></span>
+    </div>
+    <span>© 2026 SteeringFlow</span>
+    <a href="https://github.com/SteeringFlow/agent-control-plane" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </footer>
+
+<script>
+const copy = {
+  en: {
+    "nav.product":"Product","nav.how":"How it works","nav.examples":"Examples","nav.cloud":"Cloud","nav.oss":"Open Source",
+    "hero.eyebrow":"AGENT CONTROL PLANE","hero.title":"Connect<br>Route<br>Coordinate your Agents",
+    "hero.lede":"SteeringFlow is an Agent Control Plane for connecting, routing, and coordinating your Agent Network. Bring the Agents you already have — without rebuilding them.",
+    "cta.cloud":"Try Cloud","cta.github":"View on GitHub",
+    "statement.kicker":"THE IDEA","statement.title":"Bring Your Agents.<br>Don’t Rebuild Them.",
+    "statement.body":"Your Agents already contain the intelligence and business logic. SteeringFlow provides the control layer around them: connection, routing, coordination, and observability.",
+    "steps.kicker":"FROM CONNECTION TO CONTROL","steps.title":"One control layer.<br>A growing Agent Network.",
+    "steps.body":"Start with one Agent and one Channel. Add more as your network grows.",
+    "step1.title":"Connect","step1.body":"Connect your Channels and existing Agents through a single control plane.",
+    "step2.title":"Route","step2.body":"Route each request through the right Agent connection.",
+    "step3.title":"Coordinate","step3.body":"Create a foundation for coordination as your network grows.",
+    "step4.title":"Control","step4.body":"Observe interactions and create a foundation for policies and governance.",
+    "examples.kicker":"START WITH WHAT YOU HAVE","examples.title":"Connect first.<br>Expand when you’re ready.",
+    "example1.title":"Bring an Agent to your Channel.","example1.body":"Connect a WorkBuddy Agent to WeCom through SteeringFlow and get to a first successful interaction quickly.",
+    "example2.title":"Connect your own Agent runtime.","example2.body":"Use the Agent Runtime interface to connect an Agent you already built and keep its internal state under your control.",
+    "example3.title":"Connect additional Agents as your network grows.","example3.body":"No changes to the Channels your users already use.",
+    "cloud.kicker":"STEERINGFLOW CLOUD · PRIVATE BETA","cloud.tagline":"Start with one. Grow into a network.","cloud.title":"Connect your Agent.<br>Skip the infrastructure.","cloud.body":"A hosted path for teams that want to connect Agents and Channels without running the control-plane infrastructure themselves.","cloud.link":"Request Cloud Early Access →",
+    "flow.step1":"Sign up","flow.step2":"Connect Agent","flow.step3":"Connect Channel","flow.step4":"First Success",
+    "oss.kicker":"OPEN SOURCE","oss.title":"Run SteeringFlow yourself.","oss.body":"SteeringFlow is designed to be self-hosted. Explore the code, run it locally, and build your own integrations.","oss.link":"Explore the repository →",
+    "final.kicker":"YOUR AGENT NETWORK STARTS HERE","final.title":"Connect. Route. Coordinate.<br>Control your Agent Network."
+  },
+  zh: {
+    "nav.product":"产品","nav.how":"工作方式","nav.examples":"示例","nav.cloud":"Cloud","nav.oss":"开源",
+    "hero.eyebrow":"AGENT CONTROL PLANE","hero.title":"连接<br>路由<br>协同 Agent",
+    "hero.lede":"SteeringFlow 连接、路由并协调你已经拥有的 Agent，让你无需重新构建每一个 Agent，就能逐步构建自己的 Agent Network。",
+    "cta.cloud":"试用 Cloud","cta.github":"查看 GitHub",
+    "statement.kicker":"核心理念","statement.title":"带上你的 Agent<br>不要重新构建它们",
+    "statement.body":"你的 Agent 已经承载了智能与业务逻辑。SteeringFlow 提供其外部的控制层：连接、路由、协同与可观测性。",
+    "steps.kicker":"从连接走向控制","steps.title":"一个控制层<br>不断成长的 Agent Network",
+    "steps.body":"从一个 Agent、一个 Channel 开始，随着网络成长逐步增加。",
+    "step1.title":"连接","step1.body":"通过统一的 Control Plane 连接你的 Channel 与现有 Agent。",
+    "step2.title":"路由","step2.body":"通过正确的 Agent 连接路由每一个请求。",
+    "step3.title":"协同","step3.body":"随着网络成长，为 Agent 协同奠定基础。",
+    "step4.title":"控制","step4.body":"观察 Agent 交互，并为未来的策略与治理建立控制基础。",
+    "examples.kicker":"从你已有的 Agent 开始","examples.title":"先连接<br>准备好后再扩展",
+    "example1.title":"让 Agent 进入你的 Channel","example1.body":"通过 SteeringFlow 将 WorkBuddy Agent 接入企业微信，快速完成第一次成功交互。",
+    "example2.title":"接入你自己的 Agent Runtime","example2.body":"使用 Agent Runtime 接口连接你已经构建的 Agent，同时让 Agent 的内部状态继续由你自己控制。",
+    "example3.title":"随着网络成长 连接更多 Agent","example3.body":"无需改变用户已经在使用的 Channel。",
+    "cloud.kicker":"STEERINGFLOW CLOUD · PRIVATE BETA","cloud.tagline":"从一个开始，逐步构建 Agent Network。","cloud.title":"连接你的 Agent<br>无需自己搭建基础设施","cloud.body":"为希望快速连接 Agent 与 Channel、而不想自行运行 Control Plane 基础设施的团队提供托管方式。","cloud.link":"申请 Cloud Early Access →",
+    "flow.step1":"注册","flow.step2":"连接 Agent","flow.step3":"连接 Channel","flow.step4":"首次成功",
+    "oss.kicker":"开源","oss.title":"自己部署 SteeringFlow","oss.body":"SteeringFlow 支持自托管。查看代码、本地运行，并构建你自己的集成。",
+    "oss.link":"查看代码仓库 →","final.kicker":"你的 Agent Network 从这里开始","final.title":"连接 路由 协同<br>控制你的 Agent Network"
+  }
+};
+
+const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} } };
+
+function setLanguage(lang) {
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (copy[lang][key] !== undefined) el.innerHTML = copy[lang][key];
+  });
+  store.set("sf-lang", lang);
+  document.querySelector(".lang-en").classList.toggle("active", lang === "en");
+  document.querySelector(".lang-zh").classList.toggle("active", lang === "zh");
+  document.title = "SteeringFlow — Agent Control Plane";
+}
+const browserLang = navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+const initialLang = store.get("sf-lang") || browserLang;
+setLanguage(initialLang);
+document.getElementById("langSwitch").addEventListener("click", () => {
+  setLanguage(document.documentElement.lang === "zh-CN" ? "en" : "zh");
+});
+
+/* scroll reveal (fires once per section) */
+const revealEls = document.querySelectorAll(".reveal");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealEls.forEach(el => el.classList.add("is-visible"));
+} else {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+}
+
+/* header shadow on scroll */
+const header = document.querySelector(".site-header");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+</script>
+</body>
+</html>

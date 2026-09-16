@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" role="img" aria-label="SteeringFlow 标识 · 主标识（浅色界面）">
+  <!-- SteeringFlow Mark · Primary (light interfaces)
+       墨黑 #16161A + 珍珠金 #C9A24B · 透明背景 -->
+  <g fill="none" stroke-linecap="round">
+    <!-- 七根墨色辐条 -->
+    <g stroke="#16161a" stroke-width="14">
+      <line x1="140" y1="140" x2="250" y2="140"/>
+      <line x1="140" y1="140" x2="217.8" y2="217.8"/>
+      <line x1="140" y1="140" x2="140" y2="250"/>
+      <line x1="140" y1="140" x2="62.2" y2="217.8"/>
+      <line x1="140" y1="140" x2="30" y2="140"/>
+      <line x1="140" y1="140" x2="62.2" y2="62.2"/>
+      <line x1="140" y1="140" x2="217.8" y2="62.2"/>
+    </g>
+    <!-- 王舵辐（金色，正上方） -->
+    <line x1="140" y1="140" x2="140" y2="30" stroke="#c9a24b" stroke-width="14"/>
+    <!-- 主舵环 -->
+    <circle cx="140" cy="140" r="70" stroke="#16161a" stroke-width="12.6"/>
+    <!-- 罗盘轴心 -->
+    <circle cx="140" cy="140" r="26" fill="#16161a"/>
+    <circle cx="140" cy="140" r="10" fill="#c9a24b"/>
+  </g>
+</svg>
