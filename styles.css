@@ -89,8 +89,15 @@ a{color:inherit;text-decoration:none}
 .final-cta{text-align:center;max-width:var(--max);margin:auto;padding:135px 28px 145px;border-top:1px solid var(--line)}
 .final-mark{width:75px;height:75px;margin-bottom:35px}.final-cta h2{margin-bottom:34px}.final-cta .cta-row{justify-content:center}
 
-footer{width:100%;padding:28px max(28px,calc(50% - 620px));display:flex;align-items:center;gap:24px;border-top:1px solid var(--line);font-size:11px;color:#777}
+footer{width:100%;padding:28px max(28px,calc(50% - 620px));display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:11px;color:#777}
 .footer-brand{margin-right:auto}.footer-brand .brand-mark{width:25px;height:25px}.footer-brand .brand-name{font-size:17px}
+.footer-contact{display:flex;align-items:baseline;gap:12px;white-space:nowrap;text-align:right}
+.footer-contact-title{margin:0;font-size:11px;letter-spacing:1.5px;font-weight:700;color:var(--ink)}
+.footer-contact-text{margin:0;font-size:11px;line-height:1.6;color:#777}
+.footer-email{font-size:13px;font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:border-color .25s ease}
+.footer-email:hover{border-color:var(--gold)}
+.footer-github{font-size:11px;color:#4D4D50;font-weight:500}
+.footer-github:hover{color:var(--ink)}
 
 @media (max-width:900px){
   .site-header{gap:18px}.nav{display:none}.header-actions{margin-left:auto}
@@ -104,7 +111,8 @@ footer{width:100%;padding:28px max(28px,calc(50% - 620px));display:flex;align-it
   .hero{padding-top:55px;min-height:auto}.hero h1{font-size:47px}.hero-lede{font-size:16px}
   .section-head{display:block}.section-head>p{margin-top:20px}.step-grid{grid-template-columns:1fr}.step-card{border-right:0;border-bottom:1px solid var(--line)!important;min-height:210px}.step-card:last-child{border-bottom:0!important}
   .statement h2,.section-head h2,.split h2,.final-cta h2{letter-spacing:-2px}
-  footer{padding:22px 20px;flex-wrap:wrap}
+  footer{padding:22px 20px}
+  .footer-contact{white-space:normal;flex-wrap:wrap;text-align:left;row-gap:6px}
 }
 
 /* V0.4 animated hero network */
